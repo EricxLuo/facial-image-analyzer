@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Rekognition</title>
+</head>
+<body>
+    <h1>Upload Image</h1>
+    <form id="imageForm">
+        <input id="imageInput" type="file" accept="image/*">
+        <button type="submit">Upload</button>
+    </form>
+
+
+    <div id="imageResult" style="margin-top: 20px;  border: 1px solid #ccc; padding: 10px; width: 300px;">
+        <strong>Analysis (still need to fix):</strong>
+        <pre id="imageOutput" style="white-space: pre-wrap;"></pre>
+    </div>
+  <hr>
+    <h1> Camera Access</h1>
+ 
+    <video id="video" width="480" height="360" autoplay playsinline></video><br>
+    
+    
+    
+    <div id="result" style="margin-top: 20px;  border: 1px solid #ccc; padding: 10px; width: 300px;">
+        <strong>Analysis:</strong>
+        <pre id="faceOutput" style="white-space: pre-wrap;"></pre>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
