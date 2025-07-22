@@ -11,10 +11,7 @@ def detect_labels(photo, bucket):
 
     print('Detected labels for ' + photo) 
     print()   
-    #for label in response['Labels']:
-        #print ("Label: " + label['Name'])
-        #print ("Confidence: " + str(label['Confidence']))
-        #print ("----------")
+    
 
     return response
 

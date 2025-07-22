@@ -1,8 +1,6 @@
-//import dotenv from 'dotenv';
 const aws = require('aws-sdk');
 const crypto = require('crypto');
 const { promisify } = require('util');
-
 const randomBytes = promisify(crypto.randomBytes);
 
 

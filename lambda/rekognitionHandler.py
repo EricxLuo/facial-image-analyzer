@@ -1,12 +1,6 @@
 import boto3
 import json
 import base64
-#load_dotenv()
-#accessKeyId=os.getenv("AWS_ACCESS_KEY_ID")
-#secretAccessKey = os.getenv("AWS_SECRET_ACCESS_KEY")
-
-
-#for image upload
 
 
 client = boto3.client('rekognition',region_name = "us-east-1")
