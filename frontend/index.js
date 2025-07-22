@@ -8,19 +8,17 @@ const result = document.querySelector("#result");
 
 
 
-
-
-
+//api gateway hidden for security
+const API_GATEWAY = "https://your-api-id.execute-api.us-east-1.amazonaws.com/prod"
 
 imageForm.addEventListener("submit", async event =>{
     event.preventDefault();
     const file = imageInput.files[0];
     
     const fileType = file.type;
-    //get the unique url from the server
-    //https://8v4l85wko7.execute-api.us-east-1.amazonaws.com/test / bucketUrl for API gateway
-    // originally /bucketUrl
-    const {url} = await fetch(`https://8v4l85wko7.execute-api.us-east-1.amazonaws.com/test/bucketUrl?fileType=${encodeURIComponent(file.type)}`).then (res=>res.json());
+    
+    // bucketUrl for API gateway
+    const {url} = await fetch(`${API_GATEWAY}/bucketUrl?fileType=${encodeURIComponent(file.type)}`).then (res=>res.json());
     console.log(url);
 
 
@@ -35,7 +33,7 @@ imageForm.addEventListener("submit", async event =>{
     const imgUrl = url.split("?")[0];
 
     //originally http://localhost:5000
-    const response = await fetch('https://8v4l85wko7.execute-api.us-east-1.amazonaws.com/test/URLtransfer',{
+    const response = await fetch(`${API_GATEWAY}/URLtransfer`,{
         method: 'POST',
         headers:{
             'Content-Type': 'application/json'
@@ -84,8 +82,7 @@ async function capture(){
     console.log("sending frame to /analyze");
 
     try {
-        //originally http://localhost:5000/
-        const response = await fetch("https://8v4l85wko7.execute-api.us-east-1.amazonaws.com/test/analyze", {
+        const response = await fetch(`${API_GATEWAY}/analyze`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ image: vidURL })

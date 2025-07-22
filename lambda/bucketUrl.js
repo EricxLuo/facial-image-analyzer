@@ -4,20 +4,15 @@ const crypto = require('crypto');
 const { promisify } = require('util');
 
 const randomBytes = promisify(crypto.randomBytes);
-//dotenv.config();
 
-const region="us-east-1"
-const bucketName="image-rekognition-useast-1"
-//const accessKeyId= process.env.AWS_ACCESS_KEY_ID
-//const secretAccessKey= process.env.AWS_SECRET_ACCESS_KEY
+
+const region="Your-Region"
+const bucketName="Your-Bucket-Name"
+
 
 
 const s3=new aws.S3({
     region,
-   // credentials: {
-    //accessKeyId,
-    //secretAccessKey,
- // },
     signatureVersion: 'v4'
 })
 
