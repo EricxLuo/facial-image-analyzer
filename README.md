@@ -1,5 +1,5 @@
 # Face & Image Analyzer
-https://d394s2tqpjfyo5.cloudfront.net/  
+
 
 This application is fully serverless and can use AI to detect images, facial emotions, guess age, and gender
 
